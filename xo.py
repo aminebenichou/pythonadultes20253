@@ -8,7 +8,10 @@ def display_table():
     print("   |    |   ")
 turn = 0
 player= "X"
-while True:
+running = True
+while running:
+    k=0
+    l=0
     display_table()
     player_input = input("Enter a number between 1 and 9: ")
     if turn%2==0:
@@ -23,3 +26,16 @@ while True:
             i += 1
     turn += 1
 
+    while k<7 and running:
+        if values[k]==values[k+1]==values[k+2]:
+            print(f"{player} Has Won")
+            running=False
+            break
+        k += 3
+    while running and l<3:
+        if values[l]==values[l+3]==values[l+6]:
+            print(f"{player} Has Won")
+            running=False
+            break
+        l += 1
+    
