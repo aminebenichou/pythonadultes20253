@@ -30,11 +30,14 @@ class Player:
 
 
 players = [
-    'test'
-    'test'
-    'test'
-    'test'
-    'test'
+    'test',
+    'test',
+    'test1',
+    'test',
+    'test',
 ]
-for x in players:
-    Player().username = x
+
+filtereditem = players.index("test1")
+print(players)
+del players[filtereditem]
+print(players)
